@@ -18,7 +18,7 @@
       console.log('Desconectado del servidor');
     });
     socket.emit('mensaje', {nombre: 'Fernando'});
-    socket.on('Mensaje', function(payload) {
+    socket.on('new-message', function(payload) {
       console.log('Escuchando', payload);
     });
   </script>
