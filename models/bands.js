@@ -14,8 +14,8 @@ class Bands {
   }
 
   deletedBand(id = "") {
-    this.bans = this.bans.filter((band) => band.id !== id);
-    return this.bans;
+    this.bands = this.bands.filter((band) => band.id !== id);
+    return this.bands;
   }
 
   voteBand(id = "") {
