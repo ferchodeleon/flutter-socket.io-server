@@ -2,7 +2,7 @@ const Band = require("./band");
 
 class Bands {
   constructor() {
-    this.bans = [];
+    this.bands = [];
   }
 
   addBand(band = new Band()) {
@@ -10,7 +10,7 @@ class Bands {
   }
 
   getBands() {
-    return this.bans;
+    return this.bands;
   }
 
   deletedBand(id = "") {
