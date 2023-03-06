@@ -25,6 +25,11 @@ io.on("connection", (client) => {
     io.emit("Mensaje", { admin: "Nuevo mensaje" });
   });
 
+  client.on('vote-band', (payload) => {
+    bands.voteBand(payload.id);
+    io.emit('active-bands', bands.getBands());
+  });
+
   client.on("new-message", (payload) => {
     console.log("new message", payload);
     io.emit("new-message", payload); // En este caso lo emite a todos
