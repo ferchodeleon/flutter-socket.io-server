@@ -2,8 +2,21 @@ const express = require("express");
 const path = require("path");
 require("dotenv").config();
 
+//DB config
+// const {dbConnection} = require('./database/config');
+// dbConnection(); Este es una forma de llamar un paquete
+
+//Esta es otra forma de llamar un paquete.
+require('./database/config').dbConnection();
+
 // App de Express
 const app = express();
+
+//Lectura y parseo del body
+app.use(express.json());
+
+// Mis rutas
+app.use('/api/login', require('./routes/auth'));
 
 //Node server
 const server = require("http").createServer(app);
