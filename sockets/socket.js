@@ -9,7 +9,7 @@ bands.addBand(new Band('Bon Jovi'));
 bands.addBand(new Band('Don tetto'));
 bands.addBand(new Band('Metallica'));
 
-console.log(bands);
+// console.log(bands);
 
 // Mensajes de Sockets
 io.on("connection", (client) => {
