@@ -6,7 +6,7 @@ path: '/api/login'
 
 const  {Router, response} = require('express');
 const { check } = require('express-validator');
-const { createUser, login } = require('../controllers/auth');
+const { createUser, login, renewToken } = require('../controllers/auth');
 const { validateFields } = require('../middlewares/validate-fields');
 
 const router = Router();
@@ -24,5 +24,7 @@ router.post('/', [
     check('password', 'El campo password es requerido').not().isEmpty(),
     validateFields,
 ], login)
+
+router.get('/renew', renewToken);
 
 module.exports = router;
